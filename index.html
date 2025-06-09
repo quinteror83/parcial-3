@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeerExpress - Tu cerveza a domicilio</title>
+    <link rel="stylesheet" href="src/assets/css/styles.css">
+    <link rel="stylesheet" href="src/assets/css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>BeerExpress</h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="src/pages/categories.html">Categorías</a>
+                <a href="src/pages/promotions.html">Promociones</a>
+                
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon" onclick="window.location.href='src/pages/cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tu cerveza favorita a domicilio</h1>
+            <p>Descubre nuestra selección premium de cervezas nacionales e internacionales</p>
+            <a href="src/pages/categories.html" class="cta-button">Explorar Productos</a>
+        </div>
+        <div class="hero-image">
+            <img src="src/assets/images/hero-beer.png" alt="Cervezas Premium">
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <h2>Categorías Destacadas</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="src/assets/images/categories/premium.jpg" alt="Cervezas Premium">
+                <div class="category-content">
+                    <h3>Premium</h3>
+                    <p>Las mejores cervezas artesanales</p>
+                    <a href="src/pages/categories.html#premium" class="category-link">Ver más</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="src/assets/images/categories/nacionales.jpg" alt="Cervezas Nacionales">
+                <div class="category-content">
+                    <h3>Nacionales</h3>
+                    <p>Lo mejor de Colombia</p>
+                    <a href="src/pages/categories.html#nacionales" class="category-link">Ver más</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="src/assets/images/categories/importadas.jpg" alt="Cervezas Importadas">
+                <div class="category-content">
+                    <h3>Importadas</h3>
+                    <p>Sabores del mundo</p>
+                    <a href="src/pages/categories.html#importadas" class="category-link">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Promotions -->
+    <section class="promotions">
+        <h2>Ofertas Especiales</h2>
+        <div class="promotions-slider">
+            <div class="promotion-card">
+                <div class="promotion-image">
+                    <img src="src/assets/images/promotions/promo1.jpg" alt="Promoción Especial">
+                    <span class="discount-badge">-30%</span>
+                </div>
+                <div class="promotion-content">
+                    <h3>Pack Cerveza Aguila</h3>
+                    <p class="promotion-description">30 unidades x 330ml</p>
+                    <div class="price">
+                        <span class="original">$75.000</span>
+                        <span class="discounted">$52.500</span>
+                    </div>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+            </div>
+            <!-- Más tarjetas de promoción aquí -->
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-truck"></i>
+            <h3>Envío Rápido</h3>
+            <p>Entrega en menos de 60 minutos</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Compra Segura</h3>
+            <p>Pago seguro garantizado</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-medal"></i>
+            <h3>Calidad Premium</h3>
+            <p>Productos certificados</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-headset"></i>
+            <h3>Soporte 24/7</h3>
+            <p>Atención personalizada</p>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>¡No te pierdas nuestras ofertas!</h2>
+            <p>Suscríbete para recibir promociones exclusivas</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BeerExpress</h3>
+                <p>Tu mejor opción en bebidas</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="src/pages/categories.html">Categorías</a></li>
+                    <li><a href="src/pages/promotions.html">Promociones</a></li>
+                    <li><a href="src/pages/about.html">Nosotros</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> unilibire@beerexpress.com</p>
+                <p><i class="fas fa-phone"></i> 30441231232</p>
+                <p><i class="fas fa-map-marker-alt"></i> Barranquilla</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BeerExpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Tu Carrito</h2>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-items">
+                <!-- Items del carrito se cargarán dinámicamente -->
+            </div>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                <button class="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="src/assets/js/app.js"></script>
+    <script src="src/assets/js/cart.js"></script>
+</body>
+</html> 

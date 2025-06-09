@@ -1,0 +1,340 @@
+/* Hero Section */
+.promo-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 4rem 8%;
+    margin-top: 70px;
+    text-align: center;
+    color: white;
+}
+
+.promo-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.promo-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Featured Deals */
+.featured-deals {
+    padding: 4rem 8%;
+    background: white;
+}
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.deal-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.deal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.deal-card.large {
+    grid-column: 1 / -1;
+}
+
+.deal-image {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.deal-card.large .deal-image {
+    height: 450px;
+}
+
+.deal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.deal-card:hover .deal-image img {
+    transform: scale(1.1);
+}
+
+.deal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.deal-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.deal-timer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.deal-content {
+    padding: 2rem;
+}
+
+.deal-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.deal-content p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.deal-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.original {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.discounted {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.add-to-cart-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Weekly Promotions */
+.weekly-promotions {
+    padding: 4rem 8%;
+    background: #f9f9f9;
+}
+
+.weekly-promotions h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.promotion-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.promotion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-day {
+    background: var(--primary-color);
+    color: white;
+    width: fit-content;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    margin: 0 auto 1.5rem;
+    font-weight: 500;
+}
+
+.promotion-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.promotion-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.view-more-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.view-more-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Coupon Section */
+.coupon-section {
+    padding: 4rem 8%;
+    background: white;
+}
+
+.coupon-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.coupon-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.coupon-text p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.coupon-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.coupon-form input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.coupon-form button {
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.coupon-form button:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .promo-hero,
+    .featured-deals,
+    .weekly-promotions,
+    .coupon-section {
+        padding: 3rem 5%;
+    }
+
+    .deals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .deal-card.large .deal-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .promo-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .coupon-form {
+        flex-direction: column;
+    }
+
+    .coupon-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .deal-content {
+        padding: 1.5rem;
+    }
+
+    .promotion-card {
+        padding: 1.5rem;
+    }
+} 

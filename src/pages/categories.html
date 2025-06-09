@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - BeerExpress</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .categories-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/categories-hero.jpg');
+            background-size: contain;
+            background-position: center;
+            padding: 120px 0 60px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .categories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .category-filters {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            background: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .original-price {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .page-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .page-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .page-btn:hover:not(.active) {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <h1>BeerExpress</h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../../index.html">Inicio</a>
+                <a href="categories.html" class="active">Categorías</a>
+                <a href="promotions.html">Promociones</a>
+               
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="categories-hero">
+        <div class="categories-container">
+            <h1>Nuestras Categorías</h1>
+            <p>Explora nuestra amplia selección de cervezas</p>
+        </div>
+    </section>
+
+    <!-- Categories Content -->
+    <div class="categories-container">
+        <!-- Filters -->
+        <div class="category-filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="Nacional">Cervezas Nacionales</button>
+            <button class="filter-btn" data-filter="Importada">Cervezas Importadas</button>
+            <button class="filter-btn" data-filter="Artesanal">Cervezas Artesanales</button>
+            <button class="filter-btn" data-filter="Premium">Ediciones Especiales</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Aquí se insertan los productos dinámicamente -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <!-- Aquí se insertan los botones de paginación dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BeerExpress</h3>
+                <p>Tu mejor opción en bebidas</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="categories.html">Categorías</a></li>
+                    <li><a href="promotions.html">Promociones</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> unilibire@beerexpress.com</p>
+                <p><i class="fas fa-phone"></i> 30441231232</p>
+                <p><i class="fas fa-map-marker-alt"></i> Barranquilla</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BeerExpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/cart.js"></script>
+    <script>
+        const cervezas = [
+            { id: 1, titulo: "Cerveza Aguila", descripcion: "330ml - Nacional", precioActual: 2500, precioOriginal: null, imagen: "../assets/images/products/aguila.jpg", categoria: "Nacional" },
+            { id: 2, titulo: "Corona Extra", descripcion: "355ml - Importada", precioActual: 5500, precioOriginal: 6000, imagen: "../assets/images/products/corona.jpg", categoria: "Importada" },
+            { id: 3, titulo: "Club Colombia Dorada", descripcion: "330ml - Nacional Premium", precioActual: 3000, precioOriginal: null, imagen: "../assets/images/products/club-colombia.jpg", categoria: "Premium" },
+            { id: 4, titulo: "Heineken", descripcion: "330ml - Importada Premium", precioActual: 4500, precioOriginal: null, imagen: "../assets/images/products/heineken.jpg", categoria: "Premium" },
+            { id: 5, titulo: "Stella Artois", descripcion: "330ml - Importada Premium", precioActual: 5000, precioOriginal: 5500, imagen: "../assets/images/products/stella-artois.jpg", categoria: "Premium" },
+            { id: 6, titulo: "Poker", descripcion: "330ml - Nacional", precioActual: 2300, precioOriginal: null, imagen: "../assets/images/products/poker.jpg", categoria: "Nacional" },
+            { id: 7, titulo: "BBC Cajicá Honey Ale", descripcion: "330ml - Artesanal", precioActual: 8500, precioOriginal: null, imagen: "../assets/images/products/bbc-cajica.jpg", categoria: "Artesanal" },
+            { id: 8, titulo: "Budweiser", descripcion: "355ml - Importada", precioActual: 4000, precioOriginal: 4500, imagen: "../assets/images/products/budweiser.jpg", categoria: "Importada" },
+            { id: 9, titulo: "3 Cordilleras Rosé", descripcion: "330ml - Artesanal", precioActual: 7500, precioOriginal: null, imagen: "../assets/images/products/3-cordilleras.jpg", categoria: "Artesanal" },
+            { id: 10, titulo: "Andina", descripcion: "330ml - Nacional", precioActual: 2800, precioOriginal: null, imagen: "../assets/images/products/andina.jpg", categoria: "Nacional" },
+            
+        ];
+
+        // Configuración de paginación
+        const itemsPerPage = 6;
+        let currentPage = 1;
+        let currentFilter = "all";
+
+        function renderizarProductos(productos, page = 1) {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            
+            // Calcular índices para la paginación
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedProducts = productos.slice(startIndex, endIndex);
+            
+            if (paginatedProducts.length === 0) {
+                productsGrid.innerHTML = '<p class="no-results">No se encontraron productos.</p>';
+                return;
+            }
+            
+            paginatedProducts.forEach(producto => {
+                const cardHTML = `
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="${producto.imagen}" alt="${producto.titulo}">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">${producto.titulo}</h3>
+                            <p class="product-description">${producto.descripcion}</p>
+                            <div class="product-price">
+                                <span class="current-price">$${producto.precioActual.toLocaleString()}</span>
+                                ${producto.precioOriginal ? `<span class="original-price">$${producto.precioOriginal.toLocaleString()}</span>` : ''}
+                            </div>
+                            <button class="add-to-cart-btn" data-id="${producto.id}">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                `;
+                productsGrid.innerHTML += cardHTML;
+            });
+        }
+
+        function renderizarPaginacion(totalItems, currentPage) {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+            
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            
+            if (totalPages <= 1) return;
+            
+            // Botón Anterior
+            const prevButton = document.createElement('button');
+            prevButton.className = 'page-btn';
+            prevButton.textContent = 'Anterior';
+            prevButton.disabled = currentPage === 1;
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    aplicarFiltroYPaginacion();
+                }
+            });
+            pagination.appendChild(prevButton);
+            
+            // Botones de página
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                pageButton.textContent = i;
+                pageButton.addEventListener('click', () => {
+                    currentPage = i;
+                    aplicarFiltroYPaginacion();
+                });
+                pagination.appendChild(pageButton);
+            }
+            
+            // Botón Siguiente
+            const nextButton = document.createElement('button');
+            nextButton.className = 'page-btn';
+            nextButton.textContent = 'Siguiente';
+            nextButton.disabled = currentPage === totalPages;
+            nextButton.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    aplicarFiltroYPaginacion();
+                }
+            });
+            pagination.appendChild(nextButton);
+        }
+
+        function filtrarProductos(categoria) {
+            if (categoria === "all") {
+                return cervezas;
+            }
+            return cervezas.filter(producto => producto.categoria === categoria);
+        }
+
+        function aplicarFiltroYPaginacion() {
+            const productosFiltrados = filtrarProductos(currentFilter);
+            renderizarProductos(productosFiltrados, currentPage);
+            renderizarPaginacion(productosFiltrados.length, currentPage);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar
+            aplicarFiltroYPaginacion();
+
+            // Manejar filtros
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    currentFilter = button.dataset.filter;
+                    currentPage = 1; // Resetear a la primera página al cambiar filtro
+                    aplicarFiltroYPaginacion();
+                });
+            });
+
+            // Manejar agregar al carrito
+            document.addEventListener('click', (event) => {
+                if (event.target.classList.contains('add-to-cart-btn')) {
+                    const productId = parseInt(event.target.dataset.id);
+                    const producto = cervezas.find(p => p.id === productId);
+                    if (producto) {
+                        console.log('Producto agregado al carrito:', producto);
+                        alert(`Producto agregado al carrito: ${producto.titulo}`);
+                        // Aquí podrías llamar a una función para actualizar el carrito
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
